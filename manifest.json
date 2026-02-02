@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "HTML Element to Markdown",
+  "version": "1.0.0",
+  "description": "Convert a selected HTML element (like a table) into Markdown.",
+  "permissions": ["activeTab", "clipboardWrite"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_title": "Convert element to Markdown",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
